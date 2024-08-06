@@ -1,0 +1,3 @@
+package com.example.myjetpackapplication
+
+sealed interface ContactEvent
