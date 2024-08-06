@@ -6,11 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
@@ -27,7 +25,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import java.nio.file.WatchEvent
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +37,7 @@ val name = remember { mutableStateOf(TextFieldValue("")) }
 Column(
     modifier = Modifier.padding(10.dp)
 ) {
-    Row(){
+    Row(modifier = Modifier.padding(4.dp)){
         MyTextField(textValue = name)
         Spacer(modifier = Modifier.width(10.dp))
         FilledButtonExample(onClick = {
@@ -53,7 +50,6 @@ Column(
             Text(text = name, modifier = Modifier.padding(8.dp))
             Divider(color = Color.Gray, thickness = 1.dp)
         }
-
     }
 }
         }
